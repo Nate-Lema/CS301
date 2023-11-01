@@ -6,7 +6,7 @@
     "noImplicitReturns": true,
     "strict": true,
    },
-    "include": ["*.ts", "/github.io/sd415/d12functions/src/*.ts" , "./test/*.ts"],
+    "include": ["*.ts", "src/*.ts" , "./test/*.ts"],
     "ts-node": {
     "esm": true, // «———— enable ESM for ts-node
     },
