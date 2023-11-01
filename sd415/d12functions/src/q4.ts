@@ -14,4 +14,4 @@ export function multDigits(input:number):number{
     }
     return multiple;
 }
-console.log(sumDigits(1234),multDigits(1234))
+// console.log(sumDigits(1234),multDigits(1234))

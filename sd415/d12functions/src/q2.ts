@@ -21,5 +21,5 @@ export function  compoundInterest(initialAmount:number,annualInterestRate:number
 
     return savingBalance;
 }
-console.log("expect 110.47", compoundInterest(100, 10, 1).toFixed(2));
-console.log("expect 16470.09", compoundInterest(10000, 5, 10).toFixed(2));
+// console.log("expect 110.47", compoundInterest(100, 10, 1).toFixed(2));
+// console.log("expect 16470.09", compoundInterest(10000, 5, 10).toFixed(2));
