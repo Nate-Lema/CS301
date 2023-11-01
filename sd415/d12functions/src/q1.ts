@@ -35,9 +35,3 @@ export function computeSalesCommission(salaried:boolean,salesAmount:number):numb
 
     return commission;
 }
-// console.log("expect 0: ", computeSalesCommission(true, 200));
-// console.log("expect 0: ", computeSalesCommission(false, 200));
-// console.log("expect 3: ", computeSalesCommission(true, 300));
-// console.log("expect 6: ", computeSalesCommission(false, 300));
-// console.log("expect 65: ", computeSalesCommission(true, 3500));
-// console.log("expect 100: ", computeSalesCommission(false, 3500));
