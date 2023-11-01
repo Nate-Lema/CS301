@@ -10,7 +10,7 @@ process(steps): 1,getting the input
                 4,now looping through Monthly Compound and adding interest to the account balance
 */
 
-function  compoundInterest(initialAmount:number,annualInterestRate:number,numYearsToCompound:number):number {
+export function  compoundInterest(initialAmount:number,annualInterestRate:number,numYearsToCompound:number):number {
     let savingBalance = initialAmount;
     let monthlyInterestRate = (annualInterestRate/12)/100;
     let forMonthlyCompound = numYearsToCompound*12;

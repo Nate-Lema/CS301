@@ -19,7 +19,7 @@ process(steps): 1,getting the input
                 if else sales person above 500 then 3% commission  plus the 2% 
                 commission on the first 500.
 */
-function computeSalesCommission(salaried:boolean,salesAmount:number):number{
+export function computeSalesCommission(salaried:boolean,salesAmount:number):number{
     let commission = 0;
     if(salaried === true){
         if (salesAmount >= 300 && salesAmount <= 500) {

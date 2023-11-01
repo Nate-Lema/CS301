@@ -8,7 +8,7 @@ process(steps): 1,getting the input
                 if cost House between 100k and 200k down payment will be 15% of the (cost-100k )plus $7500
                 if cost House above 200k down payment will be 10% of the(cost-200k) plus $20000
 */
-function calcDownpayment(costHouse:number):number{
+export function calcDownpayment(costHouse:number):number{
     let downPayment = 0;
     if(costHouse<50000){
         downPayment+=(costHouse*0.05);

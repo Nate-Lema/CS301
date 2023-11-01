@@ -1,4 +1,4 @@
-function sumDigits(input:number):number{
+export function sumDigits(input:number):number{
     let inputInteger = String(input);
     let sum = 0;
     for (let ele of inputInteger) {
@@ -6,7 +6,7 @@ function sumDigits(input:number):number{
     }
     return sum;
 }
-function multDigits(input:number):number{
+export function multDigits(input:number):number{
     let inputInteger = String(input);
     let multiple = 1;
     for (let ele of inputInteger) {
