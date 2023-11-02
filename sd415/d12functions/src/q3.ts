@@ -22,7 +22,3 @@ export function calcDownpayment(costHouse:number):number{
     return downPayment;
 
 }
-// console.log("expect 2000: ", calcDownpayment(40000));
-// console.log("expect 2500: ", calcDownpayment(50000));
-// console.log("expect 7500: ", calcDownpayment(100000));
-// console.log("expect 25000: ", calcDownpayment(250000));
