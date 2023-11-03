@@ -74,7 +74,6 @@ export function scoreExams(studentAnswers: number[][], correctAnswers: number[])
 
 export function generateArray(rows: number, cols: number): number[][] {
     const result: number[][] = [];
-  
     for (let i = 0; i < rows; i++) {
       result.push([]);
       for (let j = 0; j < cols; j++) {
