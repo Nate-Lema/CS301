@@ -104,23 +104,32 @@ describe("reverse numbers array",function(){
     })
 })
 
-describe("testing student numbers",function(){
-    it("testing  [[1, 1, 2,4], [2, 1, 2,2], [3, 1, 3,4]];",function(){
-        const studentAnswers = [[1, 1, 2,4], [2, 1, 2,2], [3, 1, 3,4]];
-        const correctAnswers = [3, 1, 2,4];
-        assert.strictEqual(scoreExams(studentAnswers, correctAnswers),[3,2,3])
-    })
-})
+describe("score exam", function () {
+    const studentAnswers = [[1, 1, 2,4], [2, 1, 2,2], [3, 1, 3,4]];
+    const correctAnswers = [3, 1, 2,4];
+    it("exam with 3 students", function () {
+        assert.deepEqual(scoreExams(studentAnswers, correctAnswers), [3,2,3]);
+    });
+    it("exam with 3 students: one student has all incorrect answers", function () {
+        assert.deepEqual(scoreExams( [[1, 1, 2,4], [2, 1, 2,2], [1,2, 3,1]], correctAnswers), [3,2,0]);
+    });
+    it("exam with 3 students: one student has all correct answers", function () {
+        assert.deepEqual(scoreExams( [[1, 1, 2,4], [2, 1, 2,2],[3, 1, 2,4]], correctAnswers), [3,2,4]);
+    });
+});
 
-describe("getting two integers as row and col",function(){
-    it("testing  [ [1, 2, 3], [4, 5, 6], [7, 8, 9]]",function(){
-        assert.strictEqual(generateArray(3,3),[[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    })
-    it("testing   [ [1, 2, 3], [4, 5, 6]]",function(){
-        assert.strictEqual(generateArray(2,3), [[1, 2, 3], [4, 5, 6]])
-    })
-    it("testing  [ [1], [2]]",function(){
-        assert.strictEqual(generateArray(2,1),[[1], [2]])
-    })
-})
+describe("generate array", function () {
+    const expected33 = [ [1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    const expected23 = [ [1, 2, 3], [4, 5, 6]];
+    const expected21 = [ [1], [2]];
+    it("expected33", function () {
+        assert.deepEqual(generateArray(3,3), expected33);
+    });
+    it("expected23", function () {
+        assert.deepEqual(generateArray(2,3), expected23);
+    });
+    it("expected21", function () {
+        assert.deepEqual(generateArray(2, 1), expected21);
+    });
+});
 
