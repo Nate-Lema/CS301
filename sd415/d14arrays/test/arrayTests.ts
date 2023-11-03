@@ -37,7 +37,7 @@ describe("maxOfThree", function () {
         assert.strictEqual(maxOfThree(-2, 0, -2), 0);
     });
     it("tests 6 6 6", function () {
-        assert.strictEqual(maxOfThree(-1, 0, 1), 0);
+        assert.strictEqual(maxOfThree(6, 6, 6), 0);
     });
 });
 
