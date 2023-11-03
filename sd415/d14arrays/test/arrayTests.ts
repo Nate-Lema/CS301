@@ -1,7 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 import { assert } from "chai"
 
-import {maxOfThree, sum, multiply, findLongestWord, generateArray} from "../src/app.js";
+import {maxOfThree, sum, multiply, findLongestWord, generateArray,reverseArray,reverseArrayInPlace,scoreExams} from "../src/app.js";
      
 /* 1.	1.	Define a function maxOfThree() that takes three numbers as 
 arguments and returns the largest of them.  */
@@ -92,3 +92,48 @@ describe("generate array", function () {
         assert.deepEqual(generateArray(2, 1), expected21);
     });
 });
+describe("reverse string array",function(){
+    it("testing (A,B,C)",function(){
+        assert.strictEqual(reverseArray(["A", "B", "C"]),["C","B","A"])
+    })
+})
+
+describe("reverse numbers array",function(){
+    it("testing (1,2,3,4,5)",function(){
+        assert.strictEqual(reverseArrayInPlace([1,2,3,4,5]),[5,4,3,2,1])
+    })
+})
+
+describe("testing student numbers",function(){
+    it("testing  [[1, 1, 2,4], [2, 1, 2,2], [3, 1, 3,4]];",function(){
+        const studentAnswers = [[1, 1, 2,4], [2, 1, 2,2], [3, 1, 3,4]];
+        const correctAnswers = [3, 1, 2,4];
+        assert.strictEqual(scoreExams(studentAnswers, correctAnswers),[3,2,3])
+    })
+})
+
+describe("getting two integers as row and col",function(){
+    it("testing  [ [1, 2, 3], [4, 5, 6], [7, 8, 9]]",function(){
+        assert.strictEqual(generateArray(3,3),[[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    })
+    it("testing   [ [1, 2, 3], [4, 5, 6]]",function(){
+        assert.strictEqual(generateArray(2,3), [[1, 2, 3], [4, 5, 6]])
+    })
+    it("testing  [ [1], [2]]",function(){
+        assert.strictEqual(generateArray(2,1),[[1], [2]])
+    })
+})
+
+
+export function generateArray(rows: number, cols: number): number[][] {
+    const result: number[][] = [];
+  
+    for (let i = 0; i < rows; i++) {
+      result.push([]);
+      for (let j = 0; j < cols; j++) {
+        result[i].push(0);
+      }
+    }
+  
+    return result;
+  }
