@@ -74,10 +74,12 @@ export function scoreExams(studentAnswers: number[][], correctAnswers: number[])
 
 export function generateArray(rows: number, cols: number): number[][] {
     const result: number[][] = [];
+    let count = 1;
     for (let i = 0; i < rows; i++) {
       result.push([]);
       for (let j = 0; j < cols; j++) {
-        result[i].push(0);
+        result[i].push(count);
+        count++;
       }
     }
   
