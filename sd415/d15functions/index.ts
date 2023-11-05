@@ -36,15 +36,18 @@ console.log("Array after doubling each element:", doubledNumbers);
 //triples the input value. Write this as an anonymous function expression. Then write it using an
 //arrow expression. Write these functions in the mocha tests where it says 
 
-function tripleMyMap():number[]{
-    let myAdd: (x: number, y: number) => number = function (
-        x: number,
-        y: number
-      ): number {
-        return x + y;
-      };
 
-}
+//using the anonymous function
+const tripledNumbersAnonymous: number[] = myMap(numbers, function(num: number): number {
+    return 3 * num;
+});
+
+console.log("Array after tripling each element (Anonymous Function):", tripledNumbersAnonymous);
+
+//using the arrow function
+const tripledNumbersArrow: number[] = myMap(numbers, (num: number): number => 3 * num);
+
+console.log("Array after tripling each element (Arrow Function):", tripledNumbersArrow);
 
 
 
