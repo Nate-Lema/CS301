@@ -1,4 +1,7 @@
 //#Question 1
+
+import { type } from "mocha/lib/utils";
+
 //Write a function, double, that takes a number and returns 2 times the number.
 function double(num:number):number{
     return 2 * num;
@@ -50,5 +53,48 @@ const tripledNumbersArrow: number[] = myMap(numbers, (num: number): number => 3 
 console.log("Array after tripling each element (Arrow Function):", tripledNumbersArrow);
 
 
+type Employess = {
+    id:number;
+    name: string;
+}
+interface User {
+    id:number;
+    name:string;
+}
+let user: User = {
+    id:100,
+    name:"NATE"
+}
 
+type Student = {
+    studentId:number;
+    quizAnswers:number[];
+}
 
+let student1:Student = {
+    studentId:101,
+    quizAnswers:[1, 1, 2,4],
+}
+let student2:Student = {
+    studentId:102,
+    quizAnswers:[2, 1, 2,2]
+}
+let student3:Student = {
+    studentId:103,
+    quizAnswers:[3, 1, 3,4]
+}
+let stuQuizAnswer:number[][] = [];
+stuQuizAnswer.push(student1.quizAnswers)
+stuQuizAnswer.push(student2.quizAnswers)
+stuQuizAnswer.push(student3.quizAnswers)
+let answer = [3,1,2,4];
+let ans:number[] = [];
+for (let i = 0; i < stuQuizAnswer.length; i++) {
+    let count = 0;
+    for (let j = 0; j < stuQuizAnswer[i].length; j++) {
+        if(stuQuizAnswer[i][j] === answer[i]){
+            count++;
+        }
+        ans.push(count);
+    }
+}

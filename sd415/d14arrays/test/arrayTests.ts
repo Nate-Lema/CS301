@@ -1,7 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 import { assert } from "chai"
 
-import {maxOfThree, sum, multiply, findLongestWord,scoreExams,generateArray,reverseArray,reverseArrayInPlace} from "../src/app.js";
+import {maxOfThree, sum, multiply, findLongestWord,scoreExams,generateArray,reverseArray,reverseArrayInPlace,double,myMap,times100} from "../src/app.js";
      
 /* 1.	1.	Define a function maxOfThree() that takes three numbers as 
 arguments and returns the largest of them.  */
@@ -132,4 +132,42 @@ describe("generate array", function () {
         assert.deepEqual(generateArray(2, 1), expected21);
     });
 });
+
+////////////////////////////////
+
+// const numbers: number[] = [1, 2, 3, 4, 5];
+
+// describe("testing myMap",function(){
+//     it("testing times100",function(){
+//         assert.strictEqual(myMap(numbers,times100),[100,200,300,400,500])
+//     })
+//     it("testing times100",function(){
+//         assert.strictEqual(myMap(numbers,times100),[2,4,6,8,10])
+//     })
+// })
+
+// /*console.log("Original Array:", numbers);
+
+// console.log("Array after multiplying each element by 100:", multipliedBy100);
+
+// console.log("Array after doubling each element:", doubledNumbers);*/
+
+// //#Question 4
+// //(Not covered on exam 1) Demonstrate your myMap function with an anonymous function that
+// //triples the input value. Write this as an anonymous function expression. Then write it using an
+// //arrow expression. Write these functions in the mocha tests where it says 
+
+
+// //using the anonymous function
+// // const tripledNumbersAnonymous: number[] = myMap(numbers, function(num: number): number {
+// //     return 3 * num;
+// // });
+
+// /*console.log("Array after tripling each element (Anonymous Function):", tripledNumbersAnonymous);
+
+// //using the arrow function
+// const tripledNumbersArrow: number[] = myMap(numbers, (num: number): number => 3 * num);
+
+// console.log("Array after tripling each element (Arrow Function):", tripledNumbersArrow);*/
+
 
