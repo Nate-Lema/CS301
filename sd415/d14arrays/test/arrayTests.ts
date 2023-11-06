@@ -1,7 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 import { assert } from "chai"
 
-import {maxOfThree, sum, multiply, findLongestWord,reverseArray,reverseArrayInPlace,scoreExams,generateArray} from "../src/app.js";
+import {maxOfThree, sum, multiply, findLongestWord,scoreExams,generateArray,reverseArray,reverseArrayInPlace} from "../src/app.js";
      
 /* 1.	1.	Define a function maxOfThree() that takes three numbers as 
 arguments and returns the largest of them.  */
@@ -37,7 +37,7 @@ describe("maxOfThree", function () {
         assert.strictEqual(maxOfThree(-2, 0, -2), 0);
     });
     it("tests 6 6 6", function () {
-        assert.strictEqual(maxOfThree(6, 6, 6), 0);
+        assert.strictEqual(maxOfThree(6, 6, 6), 6);
     });
 });
 
