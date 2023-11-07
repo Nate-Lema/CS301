@@ -36,7 +36,7 @@ export function gradeStudent(studentAnswers: number[], correct: number[]): numbe
 export function gradeQuiz(studentAnswers: number[][], correct: number[]):number[]{
     let stuQuizResult:number[] = []; 
     for (let i = 0; i < studentAnswers.length; i++) {
-        let result:number = 0;
+        let result = 0;
         for (let j = 0; j < studentAnswers[i].length; j++) {
             for (let k = 0; k < correct.length; k++) {
                 if(studentAnswers[i][j] === correct[k]){
@@ -53,16 +53,18 @@ export function gradeQuiz(studentAnswers: number[][], correct: number[]):number[
 
 
 
-export function gradeQuizLabeled(studentAnswers: number[][], correct: number[]):number[]){
-    let stuQuizResult:number[] = []; 
+export function gradeQuizLabeled(studentAnswers: number[][], correct: number[]):number[][]{
+    let stuQuizResult:number[][] = []; 
     for (let i = 0; i < studentAnswers.length; i++) {
-        let result:number = 0;
+        let result:number[] = [];
+        let count = 0
         for (let j = 0; j < studentAnswers[i].length; j++) {
             for (let k = 0; k < correct.length; k++) {
                 if(studentAnswers[i][j] === correct[k]){
-                    result++;
+                    count++;
                 }
             }
+            result.push(count);
         }
         stuQuizResult.push(result);
        
