@@ -1,35 +1,41 @@
-let student1 = {
-    studentId: 101,
-    quizAnswers: [1, 1, 2, 4],
-};
-let student2 = {
-    studentId: 102,
-    quizAnswers: [2, 1, 2, 2]
-};
-let student3 = {
-    studentId: 103,
-    quizAnswers: [3, 1, 3, 4]
-};
-let stuQuizAnswer = [];
-stuQuizAnswer.push(student1.quizAnswers);
-stuQuizAnswer.push(student2.quizAnswers);
-stuQuizAnswer.push(student3.quizAnswers);
-let answer = [3, 1, 2, 4];
-let ans = [];
-for (let i = 0; i < stuQuizAnswer.length; i++) {
-    let count = 0;
-    for (let j = 0; j < stuQuizAnswer[i].length; j++) {
-        if (stuQuizAnswer[i][j] === answer[i]) {
-            count++;
+export function gradeStudent(studentAnswers, correct) {
+    let result = 0;
+    for (let i = 0; i < studentAnswers.length; i++) {
+        if (studentAnswers[i] === correct[i]) {
+            result++;
         }
-        ans.push(count);
     }
+    return result;
 }
-export {};
-// export function gradeStudent(studentAnswers: number[], correct: number[]): number {
-// //IMPLEMENT THIS
-// }
-// export function gradeQuiz(
-// //IMPLEMENT THIS
-// export function gradeQuizLabeled(
-//IMPLEMENT THIS
+export function gradeQuiz(studentAnswers, correct) {
+    let stuQuizResult = [];
+    for (let i = 0; i < studentAnswers.length; i++) {
+        let result = 0;
+        for (let j = 0; j < studentAnswers[i].length; j++) {
+            if (studentAnswers[i][j] === correct[j]) {
+                result++;
+            }
+        }
+        stuQuizResult.push(result);
+    }
+    return stuQuizResult;
+}
+export function gradeQuizLabeled(studentAnswers, correct) {
+    let stuQuizResult = [];
+    for (let i = 0; i < studentAnswers.length; i++) {
+        let result = [];
+        let count = 0;
+        for (let j = 0; j < studentAnswers[i].length; j++) {
+            if (studentAnswers[i][j] === correct[j]) {
+                count++;
+            }
+        }
+        result.push(count);
+        stuQuizResult.push(result);
+    }
+    return stuQuizResult;
+}
+// [
+//     { id: 101, score: 3 },
+//     { id: 102, score: 2 },
+//     { id: 103, score: 3 }]

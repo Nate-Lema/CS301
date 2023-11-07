@@ -1,79 +1,58 @@
+export type StudentQuiz = {
+  studentId: number;
+  quizAnswers: number[];
+};
 
-export interface StudentQuiz {
-    studentId: number,
-    quizAnswers: number[]
-}
-let student1:StudentQuiz = {
-    studentId:101,
-    quizAnswers:[1, 1, 2,4],
-}
-let student2:StudentQuiz = {
-    studentId:102,
-    quizAnswers:[2, 1, 2,2]
-}
-let student3:StudentQuiz = {
-    studentId:103,
-    quizAnswers:[3, 1, 3,4]
+export function gradeStudent(
+  studentAnswers: number[],
+  correct: number[]
+): number {
+  let result = 0;
+  for (let i = 0; i < studentAnswers.length; i++) {
+    if (studentAnswers[i] === correct[i]) {
+      result++;
+    }
+  }
+  return result;
 }
 
-//  let eachStuQuizAnswer = student1.quizAnswers;
-// stuQuizAnswer.push(student1.quizAnswers)
-// stuQuizAnswer.push(student2.quizAnswers)
-// stuQuizAnswer.push(student3.quizAnswers)
-// let quizAnswer = [3,1,2,4];
-// let ans:number[] = [];
-
-export function gradeStudent(studentAnswers: number[], correct: number[]): number {
+export function gradeQuiz(
+  studentAnswers: number[][],
+  correct: number[]
+): number[] {
+  let stuQuizResult: number[] = [];
+  for (let i = 0; i < studentAnswers.length; i++) {
     let result = 0;
-    for (let i = 0; i < studentAnswers.length; i++) {
-        if(studentAnswers[i] === correct[i]){
-            result++;
-        }
+    for (let j = 0; j < studentAnswers[i].length; j++) {
+      if (studentAnswers[i][j] === correct[j]) {
+        result++;
+      }
     }
-    return result;
+    stuQuizResult.push(result);
+  }
+  return stuQuizResult;
 }
 
-export function gradeQuiz(studentAnswers: number[][], correct: number[]):number[]{
-    let stuQuizResult:number[] = []; 
-    for (let i = 0; i < studentAnswers.length; i++) {
-        let result = 0;
-        for (let j = 0; j < studentAnswers[i].length; j++) {
-            for (let k = 0; k < correct.length; k++) {
-                if(studentAnswers[i][j] === correct[k]){
-                    result++;
-                }
-            }
-        }
-        stuQuizResult.push(result);
-       
+export function gradeQuizLabeled(
+  studentAnswers: number[][],
+  correct: number[]
+): number[][] {
+  let stuQuizResult: number[][] = [];
+  for (let i = 0; i < studentAnswers.length; i++) {
+    let result: number[] = [];
+    let count = 0;
+    for (let j = 0; j < studentAnswers[i].length; j++) {
+      if (studentAnswers[i][j] === correct[j]) {
+        count++;
+      }
     }
-    return stuQuizResult;
-}
-  
-
-
-
-export function gradeQuizLabeled(studentAnswers: number[][], correct: number[]):number[][]{
-    let stuQuizResult:number[][] = []; 
-    for (let i = 0; i < studentAnswers.length; i++) {
-        let result:number[] = [];
-        let count = 0
-        for (let j = 0; j < studentAnswers[i].length; j++) {
-            for (let k = 0; k < correct.length; k++) {
-                if(studentAnswers[i][j] === correct[k]){
-                    count++;
-                }
-            }
-            result.push(count);
-        }
-        stuQuizResult.push(result);
-       
-    }
-    return stuQuizResult;
+    result.push(count);
+    stuQuizResult.push(result);
+  }
+  return stuQuizResult;
 }
 
-
-
-
-
-
+// [
+//     { id: 101, score: 3 },
+//     { id: 102, score: 2 },
+//     { id: 103, score: 3 }]
