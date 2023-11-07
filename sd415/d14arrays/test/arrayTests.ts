@@ -94,13 +94,13 @@ describe("generate array", function () {
 });
 describe("reverse string array",function(){
     it("testing (A,B,C)",function(){
-        assert.strictEqual(reverseArray(["A", "B", "C"]),["C","B","A"])
+        assert.deepEqual(reverseArray(["A", "B", "C"]),["C","B","A"])
     })
 })
 
 describe("reverse numbers array",function(){
     it("testing (1,2,3,4,5)",function(){
-        assert.strictEqual(reverseArrayInPlace([1,2,3,4,5]),[5,4,3,2,1])
+        assert.deepEqual(reverseArrayInPlace([1,2,3,4,5]),[5,4,3,2,1])
     })
 })
 

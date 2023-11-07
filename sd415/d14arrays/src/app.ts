@@ -76,6 +76,7 @@ export function reverseArray(arr: string[]): string[] {
   }
   return reversedString;
 }
+console.log(reverseArray(["a","b","c"]))
 
 export function reverseArrayInPlace(arr: number[]): number[] {
   let reversedNumber: number[] = [];

@@ -35,9 +35,25 @@
     <a href="./dist/src/quiz.js">quiz.js</a> 
   
 
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
 
 
-    <h2>Objects Lab</h2>
+    <!-- some setup code -->
+    <script class="mocha-init">
+        mocha.setup('bdd');
+        mocha.checkLeaks(); 
+        let assert = chai.assert;
+    </script>
+
+    <!-- put links to your code and tests here -->
+    <!-- <script src="./dist/test/libraryBooksTest.js" type="module"></script>
+    <script src="./dist/test/quizTest.js" type="module"></script> -->
+
+
+    <script class="mocha-exec" type="module">
+        mocha.run();
+    </script>
     <!-- the element with id="mocha" will contain test results -->
     <div id="mocha"></div>
 
