@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function Expression lab</title>
+    <meta charset="utf-8" />
+    <title>Function Expressions lab</title>
     <link rel="shortcut icon" type="image/jpg" href="./sd415favicon.webp"/>
     <!-- download style info to make the page look nice -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
 </head>
+
 <body>
     <div id="mocha"></div> <!-- placeholder used by mocha to insert test results on page-->
 
@@ -18,17 +19,19 @@
 
 
     <!-- some setup code -->
-    <script class="mocha-init">
+    <script class="mocha-init" >
         mocha.setup('bdd');
-        mocha.checkLeaks(); 
+        mocha.checkLeaks();
         let assert = chai.assert;
     </script>
 
-    <!-- put links to your code and tests here -->
-    <script src="./dist/test/arrayTests.js" type="module"></script>
+    <!-- put links to your code and tests here  -->
+    <!-- <script src="./dist/src/fuExps.js" type="module"></script> -->
+    <script src="./dist/test/fnExpsTests.js" type="module"></script>
 
     <script class="mocha-exec" type="module">
         mocha.run();
     </script>
 </body>
+
 </html>
