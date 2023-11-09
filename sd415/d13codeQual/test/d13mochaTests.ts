@@ -5,6 +5,8 @@ import { sumDigits } from "../src/sumDigits.js";
 import { multDigits } from "../src/multDigits.js";
 import { convertFahrenheit } from "../src/convertFahrenheit.js";
 import { calcDistance } from "../src/calcDistance.js";
+import { isVowel } from "../src/vowel.js";
+
 
 describe("test a compound interest", function () {
   it("tests $100 for 1 year at 10% monthly compound", function () {
@@ -50,5 +52,32 @@ describe("testing the distance between Co-ordinates", function () {
   it("test 0,0,5,5 co-ordinnates", function () {
     const exact = calcDistance(0, 0, 5, 5);
     assert.strictEqual(+exact.toFixed(2), 7.07);
+  });
+});
+
+describe("isVowel", function () {
+  it("a is vowel", function () {
+    assert.equal(isVowel("a"), true);
+  });
+
+  it("e is vowel", function () {
+    assert.equal(isVowel("e"), true);
+  });
+  it("i is vowel", function () {
+    assert.equal(isVowel("i"), true);
+  });
+  it("o is vowel", function () {
+    assert.equal(isVowel("o"), true);
+  });
+  it("u is vowel", function () {
+    assert.equal(isVowel("u"), true);
+  });
+
+  it("z is not vowel", function () {
+    assert.equal(isVowel("z"), false);
+  });
+
+  it("5 is not vowel", function () {
+    assert.equal(isVowel("5"), false);
   });
 });
