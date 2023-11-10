@@ -21,6 +21,8 @@ describe("quiz tests", function () {
     const CORRECT_ANSWERS = [3, 1, 2, 4];
     let oneStuQuizAnswer = student1.quizAnswers;
     const eachStuQuizAnswer = [student1.quizAnswers,student2.quizAnswers,student3.quizAnswers];
+    const eachStuQuizAnswer2 = [student1,student2,student3];
+
 
     it("gradeStudent -- grade for 1 student", function () {
         assert.deepEqual(gradeStudent(oneStuQuizAnswer, CORRECT_ANSWERS), 3);
@@ -31,7 +33,10 @@ describe("quiz tests", function () {
     });
 
     it("gradeQuizLabeled -- labeled objects grades for all students", function () {
-        assert.deepEqual(gradeQuizLabeled(eachStuQuizAnswer, CORRECT_ANSWERS), [[3], [2], [3]]);
+        assert.deepEqual(gradeQuizLabeled(eachStuQuizAnswer2, CORRECT_ANSWERS), [
+            { id: 101, score: 3 },
+            { id: 102, score: 2 },
+            { id: 103, score: 3 }]);
     });
 
 

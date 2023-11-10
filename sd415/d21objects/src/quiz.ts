@@ -32,24 +32,26 @@ export function gradeQuiz(
   }
   return stuQuizResult;
 }
-
-export function gradeQuizLabeled(
-  studentAnswers: number[][],
-  correct: number[]
-): number[][] {
-  let stuQuizResult: number[][] = [];
-  for (let i = 0; i < studentAnswers.length; i++) {
-    let result: number[] = [];
-    let count = 0;
-    for (let j = 0; j < studentAnswers[i].length; j++) {
-      if (studentAnswers[i][j] === correct[j]) {
-        count++;
-      }
-    }
-    result.push(count);
-    stuQuizResult.push(result);
+type answerEach = {
+  id:number;
+  score:number
   }
-  return stuQuizResult;
+export function gradeQuizLabeled(studentQuizzes:StudentQuiz[], correctAnswer:number[]):answerEach[] {
+  const gradedQuizzes:answerEach[]= [];
+
+  for (let i = 0; i < studentQuizzes.length; i++) {
+      let answer = 0;
+
+      for (let j = 0; j < studentQuizzes[i].quizAnswers.length; j++) {
+          if (studentQuizzes[i].quizAnswers[j] === correctAnswer[j]) {
+              answer++;
+          }
+      }
+
+      gradedQuizzes.push({ id:studentQuizzes[i].studentId, score:answer });
+  }
+
+  return gradedQuizzes;
 }
 
 // [
