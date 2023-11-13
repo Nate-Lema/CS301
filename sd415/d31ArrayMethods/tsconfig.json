@@ -2,7 +2,7 @@
     "extends": "../configs/base.json",
   
     "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "dist"
   },
-  "include": ["*.ts", "./src/*.ts" , "./test/*.ts"]
+  "include": ["*.ts", "src/*.ts" , "test/*.ts"]
   }
