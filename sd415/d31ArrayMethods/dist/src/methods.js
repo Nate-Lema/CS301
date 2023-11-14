@@ -3,7 +3,9 @@ Write a function filterRange(arr, a, b) that gets an array arr, looks for elemen
 The function should not modify the array. It should return the new array.
 */
 export function filterRange(arr, a, b) {
-    const rangeArray = arr.filter((item) => { return item >= a && item <= b; });
+    const rangeArray = arr.filter((item) => {
+        return item >= a && item <= b;
+    });
     return rangeArray;
 }
 /*
@@ -24,17 +26,17 @@ export const calculator = {
         "+": (a, b) => a + b,
     },
     calculate: function (str) {
-        const [a, operator, b] = str.split(' ');
+        const [a, operator, b] = str.split(" ");
         if (this.methods[operator]) {
             return this.methods[operator](+a, +b);
         }
         else {
-            throw new Error('Unsupported Operator');
+            throw new Error("Unsupported Operator");
         }
     },
     addMethod: function (name, func) {
         this.methods[name] = func;
-    }
+    },
 };
 export function unique(arr) {
     return [...new Set(arr)];
@@ -49,19 +51,25 @@ export function groupById(users) {
     return usersById;
 }
 export function map2fullName(users) {
-    let result = [];
-    // FURTHER IMPLEMENTATION REQUIRED HERE
-    return result;
+    return users.map((user) => ({
+        fullName: `${user.name} ${user.surname}`,
+        id: user.id,
+    }));
 }
 export function sortByAge(users) {
-    // FURTHER IMPLEMENTATION REQUIRED HERE
+    users.sort((a, b) => a.age - b.age);
 }
 export function findOldest(users) {
-    let oldest = users[0];
-    // FURTHER IMPLEMENTATION REQUIRED HERE
-    return oldest;
+    if (users.length === 0) {
+        return undefined;
+    }
+    return users.reduce((oldest, current) => current.age > oldest.age ? current : oldest);
 }
 /* getAverageAge using reduce */
 export function getAverageAge(users) {
-    return 0;
+    if (users.length === 0) {
+        return 0;
+    }
+    const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+    return totalAge / users.length;
 }
