@@ -87,12 +87,26 @@ function findClassroomsWithCapacity(classrooms, minCapacity) {
 }
 const capacity30 = findClassroomsWithCapacity(classrooms, 30);
 console.log(capacity30.length); //2
-console.log(capacity30[1].roomNumber); //101
+console.log(capacity30[0].roomNumber); //101
 //6.	Create a function findStudentsOlderThan(classrooms, minAge) that takes the classrooms array and a minimum 
 //age as parameters and returns an array of student objects who are older than the specified age, along with the name of their classroom.
-//   const olderThan18 = findStudentsOlderThan(classrooms, 18);
-//     assert.strictEqual( olderThan18.length, 4 );
-//     assert.strictEqual( olderThan18[0].name, "Bob" );
-//   function findStudentsOlderThan(classrooms:Classroom[],minAge:number):Classroom[]{
-//     return classrooms.filter((classroom)=>classroom.students.age >= minAge)
-//   }
+function findStudentsOlderThan(classrooms, minAge) {
+    return classrooms.filter((classroom) => classroom.students.some((student) => student.age > minAge));
+}
+const olderThan18 = findStudentsOlderThan(classrooms, 18);
+console.log(olderThan18);
+console.log(olderThan18.length); //3
+//7.	Create a function averageStudentAge(classrooms) that takes the classrooms array as a parameter and returns 
+//the average age of students across all classrooms.
+function averageStudentAge(classrooms) {
+    let sumAge = 0;
+    let ageLength = 0;
+    for (const student of classrooms) {
+        for (const ages of student.students) {
+            sumAge += ages.age;
+            ageLength++;
+        }
+    }
+    return sumAge / ageLength;
+}
+console.log(averageStudentAge(classrooms));

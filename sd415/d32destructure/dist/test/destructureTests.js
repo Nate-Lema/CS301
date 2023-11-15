@@ -1,7 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 // import { assert } from "chai";
 import { topSalary } from "../src/destructure.js";
-import { classrooms, collectRoomNumbers, collectRoomsAndCapacities, collectLabeledRoomCaps, countStudentsInClassroom, findClassroomsWithCapacity } from '../src/classrooms.js'; //, findStudentsOlderThan, averageStudentAge
+import { classrooms, collectRoomNumbers, collectRoomsAndCapacities, collectLabeledRoomCaps, countStudentsInClassroom, findClassroomsWithCapacity, averageStudentAge } from '../src/classrooms.js'; //,findStudentsOlderThan
 /*
 Create the function topSalary(salaries) that returns the name of the top-paid person.
     If salaries is empty, it should return null.
@@ -57,7 +57,7 @@ describe("classroom embedded objects", function () {
     //   assert.strictEqual( olderThan18.length, 4 );
     //   assert.strictEqual( olderThan18[0].name, "Bob" );
     // });
-    // it("averageStudentAge", function() {
-    //   assert.equal( averageStudentAge(classrooms), 18.5);
-    // });
+    it("averageStudentAge", function () {
+        assert.equal(averageStudentAge(classrooms), 18.5);
+    });
 });

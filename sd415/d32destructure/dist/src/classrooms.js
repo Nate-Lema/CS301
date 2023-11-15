@@ -1,4 +1,4 @@
-export { collectRoomNumbers, collectRoomsAndCapacities, collectLabeledRoomCaps, countStudentsInClassroom, findClassroomsWithCapacity }; //implement these//findStudentsOlderThan,averageStudentAge
+export { collectRoomNumbers, collectRoomsAndCapacities, collectLabeledRoomCaps, countStudentsInClassroom, findClassroomsWithCapacity, findStudentsOlderThan, averageStudentAge };
 export const classrooms = [
     {
         roomNumber: 101,
@@ -59,5 +59,19 @@ function findClassroomsWithCapacity(classrooms, minCapacity) {
 }
 //6.	Create a function findStudentsOlderThan(classrooms, minAge) that takes the classrooms array and a minimum 
 //age as parameters and returns an array of student objects who are older than the specified age, along with the name of their classroom.
+function findStudentsOlderThan(classrooms, minAge) {
+    return classrooms.filter((classroom) => classroom.students.some((student) => student.age > minAge));
+}
 //7.	Create a function averageStudentAge(classrooms) that takes the classrooms array as a parameter and returns 
 //the average age of students across all classrooms.
+function averageStudentAge(classrooms) {
+    let sumAge = 0;
+    let ageLength = 0;
+    for (const student of classrooms) {
+        for (const ages of student.students) {
+            sumAge += ages.age;
+            ageLength++;
+        }
+    }
+    return sumAge / ageLength;
+}
