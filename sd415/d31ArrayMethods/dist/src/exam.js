@@ -1,3 +1,4 @@
+// import { type } from "os";
 export function firstLast(str) {
     return str.map((names) => {
         const [firstName, lastName] = names.split(" ");

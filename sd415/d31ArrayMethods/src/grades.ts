@@ -23,7 +23,7 @@ quiz.key = [{ qid: 1, ans: "b" }, { qid: 2, ans: "a" }, { qid: 3, ans: "b" }];
  * @param {Object} ans2 is an answer object 
  * @returns {number} difference of the identifiers
  */
-quiz.answerComparator = (ans1:Answer,ans2:Answer):number {
+quiz.answerComparator = (ans1:Answer,ans2:Answer):number=>{
     return ans1.qid - ans2.qid;
 };
 
